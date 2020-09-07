@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>react-moment | Mega&#39;s notes</title>
+
+  
+  <meta name="author" content="Mega">
+  
+
+  
+  <meta name="description" content="Installing1npm install --save moment react-moment">
+  
+
+  
+  
+  <meta name="keywords" content="React">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="react-moment"/>
+
+  <meta property="og:site_name" content="Mega&#39;s notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Mega&#39;s notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/experience">Experience</a></li>
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>react-moment</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/11/20/react-moment/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-11-20T07:46:07.000Z">
+          2019-11-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save moment react-moment</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h2><p>import the package into your project.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import React from &#39;react&#39;;</span><br><span class="line">import Moment from &#39;react-moment&#39;;</span><br><span class="line"> </span><br><span class="line">export default class App extends React.Component &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>react</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import React  from &#39;react&#39;;</span><br><span class="line">import Moment from &#39;react-moment&#39;;</span><br><span class="line"> </span><br><span class="line">export default class MyComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            const dateToFormat &#x3D; &#39;1976-04-19T12:59-0500&#39;;</span><br><span class="line">            &lt;Moment&gt;&#123;dateToFormat&#125;&lt;&#x2F;Moment&gt; &#x2F;&#x2F;1976-04-19 12:59</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="string">&#x27;1976-04-19T12:59-0500&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> newDate = moment(data).format(<span class="string">&#x27;YYYY-MM-DD HH:mm&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newDate) <span class="comment">//1976-04-19 12:59</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h2><p>react</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Moment format&#x3D;&quot;YYYY&#x2F;MM&#x2F;DD&quot;&gt;</span><br><span class="line">    1976-04-19T12:59-0500 &#x2F;&#x2F;1976&#x2F;04&#x2F;19</span><br><span class="line">&lt;&#x2F;Moment&gt;</span><br></pre></td></tr></table></figure>
+<p>javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="string">&#x27;1976-04-19T12:59-0500&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> newDate = moment(data).format(<span class="string">&#x27;YYYY/MM/DD&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newDate) <span class="comment">//1976/04/19</span></span><br></pre></td></tr></table></figure>
+<h2 id="Add-and-Subtract"><a href="#Add-and-Subtract" class="headerlink" title="Add and Subtract"></a>Add and Subtract</h2><p>react</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import React  from &#39;react&#39;;</span><br><span class="line">import Moment from &#39;react-moment&#39;;</span><br><span class="line"> </span><br><span class="line">export default class MyComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        const date &#x3D; new Date();</span><br><span class="line"> </span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Moment add&#x3D;&#123;&#123; hours: 12 &#125;&#125;&gt;&#123;date&#125;&lt;&#x2F;Moment&gt;</span><br><span class="line">                &lt;Moment add&#x3D;&#123;&#123; days: 1, hours: 12 &#125;&#125;&gt;&#123;date&#125;&lt;&#x2F;Moment&gt;</span><br><span class="line">                &lt;Moment subtract&#x3D;&#123;&#123; hours: 12 &#125;&#125;&gt;&#123;date&#125;&lt;&#x2F;Moment&gt;</span><br><span class="line">                &lt;Moment subtract&#x3D;&#123;&#123; days: 1, hours: 12 &#125;&#125;&gt;&#123;date&#125;&lt;&#x2F;Moment&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>javascript </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> addTime = &#123;<span class="attr">m</span>: <span class="number">2</span>, <span class="attr">d</span>: <span class="number">1</span>, <span class="attr">h</span>: <span class="number">3</span>, <span class="attr">M</span>: <span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> date = <span class="string">&#x27;1976-04-19T12:59-0500&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> newTime = moment(date).add(addTime).format(<span class="string">&#x27;YYYY-MM-DD HH:mm&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newTime)<span class="comment">//1976-06-20 15:59</span></span><br></pre></td></tr></table></figure>
+<h6 id="資料來源：react-moment"><a href="#資料來源：react-moment" class="headerlink" title="資料來源：react-moment"></a>資料來源：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-moment#add-and-subtract">react-moment</a></h6>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/前端/">前端</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/React/">React</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mega
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>壓縮 commit - squash | Mega&#39;s notes</title>
+
+  
+  <meta name="author" content="Mega">
+  
+
+  
+  <meta name="description" content="開發時，常常因為懶得命名，就直接複製issue title來當作commit訊息，但多次修改後..就會變成這樣：
+123[Bug][序:1213]泉州企業支付-支付畫面跑版 3d67f4fe[Bug][序:1213]泉州企業支付-支付畫面跑版 d1886b20[Bug][序:1213]泉州企業支付-支付畫面跑版 95e2d6ac
+除了Marge時會有很多相同的commit訊息，再Git Graph上也是讓人不知所措。">
+  
+
+  
+  
+  <meta name="keywords" content="Git">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="壓縮 commit - squash"/>
+
+  <meta property="og:site_name" content="Mega&#39;s notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Mega&#39;s notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/experience">Experience</a></li>
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>壓縮 commit - squash</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/12/11/commitSquash/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-12-11T10:40:46.000Z">
+          2018-12-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>開發時，常常因為懶得命名，就直接複製issue title來當作commit訊息，但多次修改後..就會變成這樣：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Bug][序:1213]泉州企業支付-支付畫面跑版 3d67f4fe</span><br><span class="line">[Bug][序:1213]泉州企業支付-支付畫面跑版 d1886b20</span><br><span class="line">[Bug][序:1213]泉州企業支付-支付畫面跑版 95e2d6ac</span><br></pre></td></tr></table></figure>
+<p>除了Marge時會有很多相同的commit訊息，再Git Graph上也是讓人不知所措。</p>
+<a id="more"></a>
+<p>解決辦法：<br><strong>Git Squash</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$git log</span><br><span class="line"></span><br><span class="line">commit 3d67f4fexxxxxxxxxxxxxxxxx</span><br><span class="line">Date: xxx xxx 04 08:00:00 2020 +0000</span><br><span class="line"></span><br><span class="line">    [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line"></span><br><span class="line">commit d1886b20xxxxxxxxxxxxxxxxx</span><br><span class="line">Date: xxx xxx 03 08:00:00 2020 +0000</span><br><span class="line"></span><br><span class="line">    [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line"></span><br><span class="line">commit 95e2d6acxxxxxxxxxxxxxxxxx</span><br><span class="line">Date: xxx xxx 02 08:00:00 2020 +0000</span><br><span class="line"></span><br><span class="line">    [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line">    </span><br><span class="line">commit bedcd3a0exxxxxxxxxxxxxxxx</span><br><span class="line">Date: xxx xxx 01 08:00:00 2020 +0000</span><br><span class="line"></span><br><span class="line">    Initial commit</span><br></pre></td></tr></table></figure>
+
+<p>把相同的commit合併成同一個：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$git rebase -i bedcd3a0exxxxxxxxxxxxxxxx</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;會開啟vim(vm)編輯器</span><br><span class="line"></span><br><span class="line">pick 3d67f4fe [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line">pick d1886b20 [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line">pick 95e2d6ac [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;把後面兩個改成 squash</span><br><span class="line"></span><br><span class="line">pick 3d67f4fe [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line">squash d1886b20 [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line">squash 95e2d6ac [Bug][序:1213]泉州企業支付-支付畫面跑版</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;修改完成後，存儲離開(指令&#x3D;&gt;:wx)</span><br></pre></td></tr></table></figure>
+
+<p>你的commit就會變成同一個了！</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/前端/">前端</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Git/">Git</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mega
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

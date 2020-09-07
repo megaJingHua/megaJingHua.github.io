@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SSH 更改使用者權限 | Mega&#39;s notes</title>
+
+  
+  <meta name="author" content="Mega">
+  
+
+  
+  <meta name="description" content="更改權限1.登入1$ssh mp_10740@192.168.100.26
+==輸入密碼時不顯示==
+2.進入root權限">
+  
+
+  
+  
+  <meta name="keywords" content="伺服器">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="SSH 更改使用者權限"/>
+
+  <meta property="og:site_name" content="Mega&#39;s notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Mega&#39;s notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/experience">Experience</a></li>
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>SSH 更改使用者權限</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/03/10/更改使用者權限/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-03-10T07:10:44.000Z">
+          2020-03-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="更改權限"><a href="#更改權限" class="headerlink" title="更改權限"></a>更改權限</h2><h3 id="1-登入"><a href="#1-登入" class="headerlink" title="1.登入"></a>1.登入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh mp_10740@192.168.100.26</span><br></pre></td></tr></table></figure>
+<p>==輸入密碼時不顯示==</p>
+<h3 id="2-進入root權限"><a href="#2-進入root權限" class="headerlink" title="2.進入root權限"></a>2.進入root權限</h3><a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+<h3 id="3-進入資料夾"><a href="#3-進入資料夾" class="headerlink" title="3.進入資料夾"></a>3.進入資料夾</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;var&#x2F;www&#x2F;html&#x2F;frontend-youbike-webapp</span><br></pre></td></tr></table></figure>
+<h3 id="4-更改權限"><a href="#4-更改權限" class="headerlink" title="4.更改權限"></a>4.更改權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 775 -R *</span><br></pre></td></tr></table></figure>
+<p>==-R：子目錄== ==*：所有的==</p>
+<h3 id="權限含義"><a href="#權限含義" class="headerlink" title="權限含義"></a>權限含義</h3><p><img src="https://i.imgur.com/Qj6u7DT.png"><br>:::info<br>R:可讀 (2^2=4)<br>W:可寫 (2^1=2)<br>X:可執行 (2^0=1)<br>依上圖可算為檔案權限：7(r+w+x=7)5(r+x=5)4(r=4) &gt;&gt;&gt;754<br>(專案常用權限為775)<br>:::</p>
+<h2 id="將人員編輯至不同群組"><a href="#將人員編輯至不同群組" class="headerlink" title="將人員編輯至不同群組"></a>將人員編輯至不同群組</h2><h3 id="1-使用ssh連線"><a href="#1-使用ssh連線" class="headerlink" title="1. 使用ssh連線"></a>1. 使用ssh連線</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh mp_10740@192.168.1.21</span><br><span class="line">$ ssh 使用者名稱@路徑</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-進入root權限-1"><a href="#2-進入root權限-1" class="headerlink" title="2. 進入root權限"></a>2. 進入root權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/nmvtiiY.png"></p>
+<h3 id="3-進入檔案編輯"><a href="#3-進入檔案編輯" class="headerlink" title="3. 進入檔案編輯"></a>3. 進入檔案編輯</h3><p>可將人員編輯至不同群組，例如：youbike專案，所屬擁有群組為Youbike，如需更改檔案則須將人員加入至Youbike群組。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;group</span><br><span class="line">vi 檔名</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/2xPYjyM.png"></p>
+<p>下圖左側為群組名，右側為人員。<br><img src="https://i.imgur.com/ank2lJE.png"></p>
+<ul>
+<li>在游標處開始編輯: i</li>
+<li>移動至第一行: gg</li>
+<li>刪除整行: dd</li>
+<li>複製整行: yy</li>
+<li>貼上整行: p</li>
+<li>寫入: :w</li>
+<li>離開: :question: </li>
+</ul>
+<h3 id="4-編輯檔案權限"><a href="#4-編輯檔案權限" class="headerlink" title="4. 編輯檔案權限"></a>4. 編輯檔案權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R var&#x2F;www&#x2F;html&#x2F;frontend-youbike-web&#x2F;.</span><br><span class="line">chown 修改所有 檔名</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/伺服器/">伺服器</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/伺服器/">伺服器</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mega
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

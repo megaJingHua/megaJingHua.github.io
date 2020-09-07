@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Redux &amp; Saga | Mega&#39;s notes</title>
+
+  
+  <meta name="author" content="Mega">
+  
+
+  
+  <meta name="description" content="文件
+redux 官方
+redux-saga 中文文件
+redux-devtools-extension">
+  
+
+  
+  
+  <meta name="keywords" content="React">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Redux &amp; Saga"/>
+
+  <meta property="og:site_name" content="Mega&#39;s notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Mega&#39;s notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/experience">Experience</a></li>
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Redux &amp; Saga</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/04/25/ReduxAndSaga/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-25T06:21:03.000Z">
+          2020-04-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://chentsulin.github.io/redux/docs/basics/index.html">redux 官方</a></li>
+<li><a target="_blank" rel="noopener" href="https://neighborhood999.github.io/redux-saga/docs/introduction/BeginnerTutorial.html">redux-saga 中文文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5c35cf00e51d45522665134b">redux-devtools-extension</a><a id="more"></a>
+<h3 id="實作範例"><a href="#實作範例" class="headerlink" title="實作範例"></a>實作範例</h3><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch1-redux-to-do-list-707b9">CH1-Redux -To do list</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch2-redux-thunk-api-movie-list-pi1p5">CH2-Redux Thunk API-Movie list</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch3-redux-saga-api-movie-list-usjtx">CH3-Redux Saga API-Movie list</a></li>
+</ul>
+<h3 id="Redux-生命週期"><a href="#Redux-生命週期" class="headerlink" title="Redux 生命週期"></a>Redux 生命週期</h3><p><img src="https://i.imgur.com/SPUE2WW.png"></p>
+<h6 id="參考範例：CH1-Redux-To-do-list"><a href="#參考範例：CH1-Redux-To-do-list" class="headerlink" title="參考範例：CH1-Redux -To do list"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch1-redux-to-do-list-707b9">CH1-Redux -To do list</a></h6><ol>
+<li><strong>Action</strong>：定義 Reducer 的進入點 ( type )</li>
+<li><strong>Reducer</strong>：由 Action 進入，對資料作用並儲存<ul>
+<li><strong>combineReducers</strong>：可統一管理所有的 Reducer</li>
+</ul>
+</li>
+<li><strong>Store</strong>：綁定 Reducer 創建完整的 Redux，並將資料存於 State<ul>
+<li>Store 只能有一個!<h3 id="使用-Hooks-概念取值與觸發-Reducer"><a href="#使用-Hooks-概念取值與觸發-Reducer" class="headerlink" title="使用 Hooks 概念取值與觸發 Reducer"></a>使用 Hooks 概念取值與觸發 Reducer</h3><h6 id="參考範例：CH1-Redux-To-do-list-1"><a href="#參考範例：CH1-Redux-To-do-list-1" class="headerlink" title="參考範例：CH1-Redux -To do list"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch1-redux-to-do-list-707b9">CH1-Redux -To do list</a></h6>由於使用 Redux 取資料與觸發 Reducer 過程繁雜，因此採用 react-redux 中的 useSelect 與 useDispatch。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>import { useSelector, useDispatch } from “react-redux”</li>
+<li>useSelector</li>
+<li>useDispatch</li>
+</ul>
+<h3 id="Redux-Thunk"><a href="#Redux-Thunk" class="headerlink" title="Redux Thunk"></a>Redux Thunk</h3><p><img src="https://i.imgur.com/ddrT2Wt.png"></p>
+<h6 id="參考範例：CH2-Redux-Thunk-API-Movie-list"><a href="#參考範例：CH2-Redux-Thunk-API-Movie-list" class="headerlink" title="參考範例：CH2-Redux Thunk API-Movie list"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch2-redux-thunk-api-movie-list-pi1p5">CH2-Redux Thunk API-Movie list</a></h6><ul>
+<li>import thunk from “redux-thunk”</li>
+<li>Store：createStore(rootReducer, applyMiddleware(thunk))</li>
+</ul>
+<h3 id="Redux-Saga"><a href="#Redux-Saga" class="headerlink" title="Redux Saga"></a>Redux Saga</h3><p><img src="https://i.imgur.com/ggO2yrT.png"></p>
+<h6 id="參考範例：CH3-Redux-Saga-API-Movie-list"><a href="#參考範例：CH3-Redux-Saga-API-Movie-list" class="headerlink" title="參考範例：CH3-Redux Saga API-Movie list"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch3-redux-saga-api-movie-list-usjtx">CH3-Redux Saga API-Movie list</a></h6><ul>
+<li>使用指標函式(function*)</li>
+<li>Store：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware, compose &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">&#x27;redux-saga&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">&#x27;../reducer/index&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> rootSaga <span class="keyword">from</span> <span class="string">&#x27;../saga&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware();</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(reducer, applyMiddleware(sagaMiddleware));</span><br><span class="line">sagaMiddleware.run(rootSaga);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/前端/">前端</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/React/">React</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mega
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

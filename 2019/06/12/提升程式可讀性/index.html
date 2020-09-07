@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>提升程式可讀性 | Mega&#39;s notes</title>
+
+  
+  <meta name="author" content="Mega">
+  
+
+  
+  <meta name="description" content="參考資料：如何提升你的程式可讀性之實務技巧對於軟體開發的設計模式，各自有不同的見解。但能夠讓程式碼可以在開發時具有「溝通」的效果，卻是一致的目標。">
+  
+
+  
+  
+  <meta name="keywords" content="程式基礎">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="提升程式可讀性"/>
+
+  <meta property="og:site_name" content="Mega&#39;s notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Mega&#39;s notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/experience">Experience</a></li>
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>提升程式可讀性</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/06/12/提升程式可讀性/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-06-12T03:22:37.000Z">
+          2019-06-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h6 id="參考資料：如何提升你的程式可讀性之實務技巧"><a href="#參考資料：如何提升你的程式可讀性之實務技巧" class="headerlink" title="參考資料：如何提升你的程式可讀性之實務技巧"></a>參考資料：<a target="_blank" rel="noopener" href="https://blog.niclin.tw/2020/02/29/readable-code-1/">如何提升你的程式可讀性之實務技巧</a></h6><p>對於軟體開發的設計模式，各自有不同的見解。<br>但能夠讓程式碼可以在開發時具有「溝通」的效果，卻是一致的目標。</p>
+<a id="more"></a>
+
+<h2 id="可讀性帶來什麼幫助"><a href="#可讀性帶來什麼幫助" class="headerlink" title="可讀性帶來什麼幫助?"></a>可讀性帶來什麼幫助?</h2><p>:::warning<br>難以閱讀的程式碼就像是一座迷宮，不僅迷惑自己還會讓協作者花更多時間去理解。<br>:::</p>
+<ol>
+<li><p><strong>提升效率</strong><br> 通常一段時日過後回頭來修改維護時，會重新挑戰你的記憶力，不易讀懂得程式碼將會再度浪費你的開發時間。所以，<strong>可讀性提升的是未來自己和他人的開發效率</strong>。</p>
+</li>
+<li><p><strong>減少犯錯</strong><br> <strong>良好的可讀性也就意味著表達明確</strong>，當一段程式碼的命名敘述不同於執行內容時，就是叫他媽的誰放的地雷。</p>
+<ul>
+<li><strong>命名不明的例子</strong><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">increase_read_count</span><span class="params">(post)</span></span></span><br><span class="line">  post.update(<span class="symbol">read_count:</span> post.read_count + <span class="number">1</span>)</span><br><span class="line">  SendEmail.perform(post)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> post</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+會以為 increase_read_count 只是單純增加計數，但裏頭偷發一個不知道做什麼用的 Email，這就屬於一種<strong>隱諱的寫法</strong>，因為和主要敘述功能的名稱不完全符合，也難以聯想。</li>
+</ul>
+</li>
+<li><p><strong>幫助他人學習</strong><br> 能夠讓人<strong>更快進入狀況，瞭解其邏輯、設計架構</strong>，而減少時間在搞懂這迷宮到底怎麼蓋的，能夠展現其思緒及脈絡。</p>
+</li>
+</ol>
+<p>:::warning<br>當每個你看到的程式，執行結果都與你想得差不多，你會察覺到你正工作在 Clean Code 上。<br>—clean code<br>:::</p>
+<h2 id="一-觀念"><a href="#一-觀念" class="headerlink" title="一.觀念"></a>一.觀念</h2><pre><code>+ 文字比數字好
++ 一次只做一件事
++ 永遠把自己當新手
++ 填克漏字
++ 勇於展現錯誤</code></pre>
+<ol>
+<li><strong>文字筆數字好</strong><ul>
+<li>命名不明的例子<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 沒有人知道狀態為 5 是什麼意思，為了要知道這個數字意義，我還必須去找定義</span></span><br><span class="line">update(status: <span class="number">5</span>)</span><br></pre></td></tr></table></figure></li>
+<li>命名準確的例子<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//你可以定義一個常數，將數字可以以文字展現</span></span><br><span class="line">PEDNING_STATUS = <span class="number">5</span></span><br><span class="line"><span class="comment">//即使我沒有看到常數定義，在這裡我們可以直接透過文字猜到，這個狀態即將更新為「pending」</span></span><br><span class="line">update(status: PEDNING_STATUS)</span><br></pre></td></tr></table></figure>
+::: danger<br>注意：可以在程式中以 String 語意化的方式顯示，但在 Database 中使用 integer 可減少儲存空間及提高效率。<br>:::<h6 id=""><a href="#" class="headerlink" title=""></a></h6></li>
+</ul>
+</li>
+<li><strong>一次只做一件事</strong><br> <strong>單一功能原則（Single responsibility principle）</strong> 這是物件導向設計五原則 SOLID 的其中一個，大方向是盡可能的保持「單純」。在 function / method 裡，盡可能秉持做一件事而不是一堆事的原則。<br> 當一個方法有太多的職責時也意味著：耦合多事務、有各種結果及錯誤、不易閱讀。</li>
+</ol>
+<ul>
+<li>一個 function 超過一件職責的範例  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_orders_csv_and_send_email</span></span></span><br><span class="line">    <span class="comment"># 先將 CSV 製作出來</span></span><br><span class="line">    orders_csv = CSV.generate(<span class="symbol">headers:</span> <span class="literal">true</span>) <span class="keyword">do</span> <span class="params">|csv|</span></span><br><span class="line">    <span class="comment"># write csv row</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 然後塞進 ZIP 做壓縮</span></span><br><span class="line">   stringio = Zip::ZipOutputStream::write_buffer <span class="keyword">do</span> <span class="params">|zip|</span></span><br><span class="line">       zip &lt;&lt; orders_csv</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 轉成 binary data</span></span><br><span class="line">   file = stringio.sysread</span><br><span class="line">   <span class="comment"># 然後發送信件</span></span><br><span class="line">   UserMailer.send_csv_to_user(user, file)</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure></li>
+<li>一個 function 只處理一件事範例  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrdersExportService</span></span></span><br><span class="line">    <span class="comment"># 初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(user)</span></span></span><br><span class="line">        @user = user</span><br><span class="line">        @file = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 目前唯一公開能夠呼叫的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">download</span></span></span><br><span class="line">        generate_export_file!</span><br><span class="line">        notify_to_user(user, file)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">          </span><br><span class="line">    private</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 這個 method 只負責建立「壓縮好的 CSV 檔案」</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generate_export_file!</span></span></span><br><span class="line">        <span class="comment"># write csv row</span></span><br><span class="line">        orders_csv = CSV.generate(<span class="symbol">headers:</span> <span class="literal">true</span>) <span class="keyword">do</span> <span class="params">|csv|</span>  </span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">       stringio = Zip::ZipOutputStream::write_buffer <span class="keyword">do</span> <span class="params">|zip|</span></span><br><span class="line">           zip &lt;&lt; orders_csv</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       @file = stringio.sysread</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">     <span class="comment"># 這個 method 只負責通知用戶</span></span><br><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">notify_to_user</span></span></span><br><span class="line">         UserMailer.send_csv_to_user(user, file)</span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line"> <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+  <strong>這樣子做有什麼好處？</strong><br>  function 具有更高的可讀性，如果需要理解實作細節，也可以很容易找到。未來如果要新增「簡訊」通知，是不是我只要在 notify_to_user 裡面添加實作細節就可以了？</li>
+</ul>
+<ol start="3">
+<li><p><strong>永遠把自己當新手</strong><br> 永遠把自己當作一個初出茅廬的工程師，<strong>以一個閱讀者的角度去思考</strong>，能不能快速看懂這些程式碼大概在做些什麼？有多少地方需要解釋才能看的懂？需要解釋的部分是否寫了清楚的註解？而不是把自己當作 compiler，認為只要夠厲害就看的懂。</p>
+<p> :::danger<br> 高手寫出來的程式能夠讓新手、高手都看的懂。<br> 偽高手寫出來的程式只有自己能看的懂。<br> :::</p>
+</li>
+<li><p><strong>填克漏字</strong><br> 在邏輯或畫面撰寫時，會是先思考這裡程式碼要長怎樣才會好讀，然後在去定義實作方法。</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;_____&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">// 思考命名</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;user-avatar&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">// 而後定義.user-avatar的屬性與樣式</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>勇於展現錯誤</strong><br> 有些程式語言有捕捉例外（Error expection）的語法可以使用，但使用不當很容易變成掩蓋錯誤</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line">     <span class="comment">// do something</span></span><br><span class="line">rescue =&gt; error</span><br><span class="line">     <span class="comment">// 當 error 被捕捉時，直接被 return </span></span><br><span class="line">    <span class="keyword">return</span> </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p> 這對調用者來說，他可能會不懂為什麼會被 return，仔細查也沒有 Log 被打印出來。這會讓 debug 變的非常困難，所以建議：</p>
+<ul>
+<li><p>只捕捉自己知道的例外</p>
+</li>
+<li><p>錯誤要有明確的處理（發通知、寫 Log）</p>
+</li>
+<li><p>如果不知道怎麼處理，就讓他噴掉，至少還比較容易發現 Bug</p>
+<h2 id="二-命名"><a href="#二-命名" class="headerlink" title="二.命名"></a>二.命名</h2><p>:::warning<br>There are only two hard things in Computer Science: cache invalidation and naming things. – Phil Karlton<br>:::</p>
+</li>
+<li><p>化簡為繁</p>
+</li>
+<li><p>規格不該出現在這</p>
+</li>
+<li><p>兩個恰恰好</p>
+</li>
+<li><p>讓包裝取代混亂</p>
+</li>
+</ul>
+</li>
+<li><p><strong>化簡為繁</strong><br> <strong>不必要的簡寫對閱讀沒有幫助</strong>。當你看到 ==ua.lock== 時，你不會明白這是什麼意思。但如果你看到 ==user_account.lock== 就可以第一時間猜到是「使用者帳戶要被鎖定」的操作。</p>
+</li>
+<li><p><strong>規格不該出現在這</strong><br> <strong>不要輕易把規格放在命名裡面</strong>，假設有一個方法命名為 ==lock_3_hours==，如果需求突然要改成 5 小時，是不是也要把命名改成 ==lock_5_hours==？<br> 可以取 ==lock_with_time==，然後把時間用參數傳遞，或是設定預設值==DEFAULT_LOCK_HOUR = 3.hours==。</p>
+</li>
+<li><p><strong>兩個恰恰好</strong><br> 命名的單字使用的越多，通常表示負責的事情也越多。建議<strong>保持在 2 個字左右</strong>的命名會是比較理想的設計。==saveAndUploadPost==可拆解為==savePost==與==uploadPost==。</p>
+</li>
+<li><p><strong>讓包裝取代混亂</strong><br> 正則表達式的效率會比自己寫方法判斷來的快，但這個東西在閱讀上就不是那麼容易，建議將複雜的表達式寫下註解或是直接用常數處理。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不看上下文，這樣寫真的很難理解啊</span></span><br><span class="line"><span class="keyword">if</span> (<span class="regexp">/\A[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*\z/</span>).match(name)</span><br><span class="line"> <span class="comment">// do something</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"><span class="comment">// 至少把他整理出來，能夠用文字表達</span></span><br><span class="line">USERNAME_PATTERN = <span class="regexp">/\A[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*\z/</span></span><br><span class="line"><span class="keyword">if</span> USERNAME_PATTERN.match(name)</span><br><span class="line"><span class="comment">// do something</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h2 id="三-流程"><a href="#三-流程" class="headerlink" title="三.流程"></a>三.流程</h2><ul>
+<li>Early Return</li>
+<li>縮排只要一層</li>
+<li>請使用正邏輯</li>
+</ul>
+</li>
+<li><p>Early Return</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一般用 if / else 來完成邏輯</span></span><br><span class="line"><span class="keyword">if</span> user.has_money?</span><br><span class="line">  <span class="comment">// 顯示資產列表的實作</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;沒錢&quot;</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"><span class="comment">//用 early return</span></span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;沒錢&quot;</span> <span class="keyword">if</span> !user.has_money?</span><br><span class="line"><span class="comment">//顯示資產列表的實作</span></span><br></pre></td></tr></table></figure>
+<p> 「哦，原來只要沒有錢就會拿到這個字串，那有錢的情況就一定會執行後面的實作了！」</p>
+<p> ::: danger<br> 注意：不適用於所有程式語言。<br> ::: </p>
+</li>
+<li><p><strong>縮排只有一層</strong><br> 越深的巢狀我們常戲稱為「波動拳」，有難以閱讀的狀況，因為你很難在視線上能夠對齊整個程式碼邏輯區塊，常常會看到這行不曉得到底在哪一層，然後還要思考這層能夠透過判斷式進來又是什麼條件，所以請盡量保持只有一層的縮排。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 波動拳</span></span><br><span class="line"><span class="keyword">if</span> server !== nil</span><br><span class="line">    server = getServer()</span><br><span class="line">    <span class="keyword">if</span> client !== nil</span><br><span class="line">        client = getClient()</span><br><span class="line">        <span class="keyword">if</span> current !== nil</span><br><span class="line">          processRequest(current)</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改為一層</span></span><br><span class="line"><span class="keyword">if</span> server == nil</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">end</span><br><span class="line">server = getServer()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> client == nil</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">end</span><br><span class="line">client = getClient()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> current == nil</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">processRequest(current)</span><br><span class="line"></span><br><span class="line"><span class="comment">//重構</span></span><br><span class="line"><span class="keyword">if</span> (server == nil || client == nil || current == nil)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">processRequest(current)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>請使用正邏輯</strong><br> 正邏輯會更容易被閱讀，因為<strong>沒有人喜歡看雙重否定句</strong>之類的語句，例如「是否不同意不舉行選舉</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//if not，就是一種反邏輯，會讓人有需要思考反應的空間</span></span><br><span class="line"><span class="keyword">if</span> !user.signed_in?</span><br><span class="line">  <span class="string">&quot;尚未登入&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="string">&quot;已登入&quot;</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接用正邏輯</span></span><br><span class="line"><span class="keyword">if</span> user.signed_in?</span><br><span class="line">  <span class="string">&quot;已登入&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="string">&quot;尚未登入&quot;</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="四-註解"><a href="#四-註解" class="headerlink" title="四.註解"></a>四.註解</h2><pre><code>+ 記錄想法，不要寫廢話
++ 使用標籤</code></pre>
+<ol>
+<li><p><strong>錄想法，不要寫廢話</strong><br> 註解是幫助理解，不是製造更多困惑。所以要替讀者設想，他讀到這裡可能會不明白為何有這個參數或設定？也許是當時共同決策出來的，請<strong>把原因寫清楚方便自己日後考古</strong>。</p>
+</li>
+<li><p><strong>使用標籤</strong><br> 很多開發工具可以針對這些通用標籤做處理，日後可以統一快速搜尋相同的標籤來做改善處理。</p>
+<ul>
+<li>TODO: 代表未實現的功能</li>
+<li>FIXME: 表示目前有一些 bug 需要修正</li>
+<li>HACK: 某些原因硬幹出來的</li>
+<li>XXX: 就是他媽的這段是怎樣，通常代表可以重寫或是沒人敢動了</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五-性能-vs-可讀性"><a href="#五-性能-vs-可讀性" class="headerlink" title="五.性能 vs 可讀性"></a>五.性能 vs 可讀性</h2><p>::: warning<br>程式碼是寫給人看的，編譯過後的 0 和 1 才是給電腦看的。<br>:::<br>程式碼是寫給人看的不是給電腦看的，只有在編譯過後的 0 和 1 才是真正給電腦看的，所以在與他人協作的情況下，程式可讀性應該為第一重要。許多比較高效能的撰寫方式，通常會以可讀性做為代價，除非你很確定這段程式碼就是效能瓶頸，否則不建議太早最佳化。</p>
+<h2 id="六-約定優於配置（convention-over-configuration）"><a href="#六-約定優於配置（convention-over-configuration）" class="headerlink" title="六.約定優於配置（convention over configuration）"></a>六.約定優於配置（convention over configuration）</h2><p>每個團隊因應成員的組成也有不同的習慣，<strong>不見得有一套萬全的方法能夠適用每個團隊</strong>。讓協作的隊友能夠有一套方式互相看的懂對方的產出，來達到最大的開發效率，就算有人中途離開了，也不會很難接手他的東西。<strong>建立 convention 的過程是需要不斷嘗試並調整</strong>。</p>
+<h2 id="七-社群規範（Ecosystem）"><a href="#七-社群規範（Ecosystem）" class="headerlink" title="七.社群規範（Ecosystem）"></a>七.社群規範（Ecosystem）</h2><p>這部分要端看你所學的程式語言或框架，目前在社群上什麼樣的寫法是比較常見的，盡可能的去遵循。</p>
+<p>自立門戶，往往遇到的情況就是：</p>
+<ul>
+<li>你公司招的新人，看不懂你的規範，需要花更多時間磨合。</li>
+<li>你從公司離開了，到下一間公司，要重新習慣寫法。</li>
+</ul>
+<h2 id="八-以測試角度提升可讀性"><a href="#八-以測試角度提升可讀性" class="headerlink" title="八.以測試角度提升可讀性"></a>八.以測試角度提升可讀性</h2><p>測試通常有粒度的不同，由小而大，從單元測試到整合測試，也可能會有職責的不同，從工程師負責的 unit test 到 QA 負責的更多整合測試、黑白盒測試等等</p>
+<h3 id="撰寫測試的好處是什麼？"><a href="#撰寫測試的好處是什麼？" class="headerlink" title="撰寫測試的好處是什麼？"></a>撰寫測試的好處是什麼？</h3><ul>
+<li>替你省掉手動測試的時間</li>
+<li>替你省掉回歸測試的時間</li>
+<li><strong>提升你的程式碼設計品質</strong></li>
+</ul>
+<p>為了要測一個單元，結果必須要製作各種資料才能完成，那就間接的代表，這個 function 耦合了什麼。所以你在設計程式的時候，也可以同時以測試的角度下去看，我這個 function 容易被測試嗎？負責太多事情只會：</p>
+<ol>
+<li>難以閱讀</li>
+<li>難以抓 bug</li>
+<li>難以測試</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/前端/">前端</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/程式基礎/">程式基礎</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mega
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
