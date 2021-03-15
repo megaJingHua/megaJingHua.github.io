@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="📍Input file (相機調用)123&amp;lt;from &amp;gt;    &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;#x27;img&amp;#x27; id=&amp;#x2,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Javascript"><b>「
+                    </b>JAVASCRIPT<b> 」</b></a>
+                
+                November 10, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/10/%E7%9B%B8%E6%A9%9F%E8%AA%BF%E7%94%A8%E8%88%87%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE/" title="相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出" class="">相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    20k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    18 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="📍Input-file-相機調用"><a href="#📍Input-file-相機調用" class="headerlink" title="📍Input file (相機調用)"></a>📍Input file (相機調用)</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&#x27;img&#x27;</span> <span class="attr">id</span>=<span class="string">&#x27;input&#x27;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&#x27;camera&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>accept：開啟系統檔案類型<blockquote>
+<p>camera–照相機；camcorder–攝像機；microphone–錄音</p>
+</blockquote>
+</li>
+<li>capture：調用系統預設的裝置<br>:::warning<br>備註 :去除capture可同時調用相簿(Android不一定支援)<br>:::</li>
+</ul>
+<h6 id="資料來源：採集用戶的圖像、H5頁面支援拍照選擇圖片"><a href="#資料來源：採集用戶的圖像、H5頁面支援拍照選擇圖片" class="headerlink" title="資料來源：採集用戶的圖像、H5頁面支援拍照選擇圖片"></a>資料來源：<a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/media/capturing-images/?hl=zh-tw">採集用戶的圖像</a>、<a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/511036/">H5頁面支援拍照選擇圖片</a></h6><h2 id="📍FileReader-讀取input檔案"><a href="#📍FileReader-讀取input檔案" class="headerlink" title="📍FileReader (讀取input檔案)"></a>📍FileReader (讀取input檔案)</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;file&quot;</span> <span class="attr">id</span> = <span class="string">&quot;file&quot;</span> <span class="attr">name</span> = <span class="string">&quot;file&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">&quot;result&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ProcessFile</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> file = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;file&#x27;</span>).files[<span class="number">0</span>];<span class="comment">//檔案位置</span></span><br><span class="line">      <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();<span class="comment">//新FileReader事件</span></span><br><span class="line">      reader.readAsDataURL( file );<span class="comment">//readAsDataURL方法將檔案轉為base64</span></span><br><span class="line">      reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params"> event </span>) </span>&#123; </span><br><span class="line">        <span class="keyword">var</span> txt = event.target.result;<span class="comment">//取得base64</span></span><br><span class="line">        <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">&quot;img&quot;</span>);<span class="comment">//創建img</span></span><br><span class="line">        img.src = txt;<span class="comment">//將轉成base64的檔案塞入畫布</span></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;result&quot;</span>).appendChild( img );</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">contentLoaded</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;file&#x27;</span>).addEventListener( <span class="string">&#x27;change&#x27;</span> ,</span><br><span class="line">    ProcessFile);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.addEventListener( <span class="string">&quot;DOMContentLoaded&quot;</span> , contentLoaded);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>能以非同步（asynchronously）方式讀取儲存在用戶端的檔案（或原始資料暫存）內容。</p>
+<h4 id="瀏覽器相容性"><a href="#瀏覽器相容性" class="headerlink" title="瀏覽器相容性"></a>瀏覽器相容性</h4><p><img src="https://i.imgur.com/4p77tfE.png"><br><img src="https://i.imgur.com/KDgEufg.png"></p>
+<h4 id="調用FileReader對象"><a href="#調用FileReader對象" class="headerlink" title="調用FileReader對象"></a>調用FileReader對象</h4><p><img src="https://i.imgur.com/Xup6yK9.png"></p>
+<h3 id="readAsDataURL方法-轉為base64"><a href="#readAsDataURL方法-轉為base64" class="headerlink" title="readAsDataURL方法 (轉為base64)"></a>readAsDataURL方法 (轉為base64)</h3><p>:::warning</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:image&#x2F;jpeg; base64, &#x2F;9j&#x2F;4AAQSkZJRgABAQAAAQABAAD&#x2F;2wBDA</span><br></pre></td></tr></table></figure>
+<p>使用base-64進行編碼，由data開始 + MIME type + base64字符串(編碼過的內容)<br>:::</p>
+<h3 id="target-result-取得URL渲染相片"><a href="#target-result-取得URL渲染相片" class="headerlink" title="target.result(取得URL渲染相片)"></a>target.result(取得URL渲染相片)</h3><ul>
+<li> target：返回觸發事件的元素。</li>
+<li> result：返回的數據格式取决于用哪種讀取方法来執行(只有在讀取操作完成后，此屬性才有效)。</li>
+</ul>
+<h6 id="資料來源：HTML5之FileReader的使用、FileReader、FileReader對象的readAsDataURL方法來讀取圖像文檔、target-Event-Property、FileReader-result"><a href="#資料來源：HTML5之FileReader的使用、FileReader、FileReader對象的readAsDataURL方法來讀取圖像文檔、target-Event-Property、FileReader-result" class="headerlink" title="資料來源：HTML5之FileReader的使用、FileReader、FileReader對象的readAsDataURL方法來讀取圖像文檔、target Event Property、FileReader.result"></a>資料來源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jackfrued/article/details/8967667">HTML5之FileReader的使用</a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/API/FileReader">FileReader</a>、<a target="_blank" rel="noopener" href="https://hk.saowen.com/a/a80942f3c6f73e6fe85ac23eaeaa70fe19da0955f632320784007944d301ef5f">FileReader對象的readAsDataURL方法來讀取圖像文檔</a>、<a target="_blank" rel="noopener" href="https://www.w3schools.com/jsref/event_target.asp">target Event Property</a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result">FileReader.result</a></h6><h2 id="📍Canvas-壓縮圖片"><a href="#📍Canvas-壓縮圖片" class="headerlink" title="📍Canvas (壓縮圖片)"></a>📍Canvas (壓縮圖片)</h2><p>:::success<br>因圖片檔案大小過大與手機效能過低導致無法傳送，所以將圖片壓縮或轉為 base64 傳輸。<br>:::</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// base64圖片加載完畢後</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line"><span class="keyword">var</span> file = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;image&#x27;</span>);</span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 創建畫布(canvas)</span></span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">&#x27;CANVAS&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 圖片壓縮比例</span></span><br><span class="line">    <span class="keyword">var</span> tt = <span class="number">200</span> / <span class="built_in">this</span>.width;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// canvas對圖片進行縮放</span></span><br><span class="line">    canvas.height = <span class="built_in">this</span>.height * tt;</span><br><span class="line">    canvas.width = <span class="built_in">this</span>.width * tt;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 圖片壓縮</span></span><br><span class="line">    ctx.drawImage(<span class="built_in">this</span>, <span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 回傳含有圖像和參數設置特定格式的 data URIs</span></span><br><span class="line">    <span class="keyword">var</span> dataURL = canvas.toDataURL(<span class="string">&quot;image/jpeg&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 將原始檔案替換為壓縮後檔案</span></span><br><span class="line">    file.dataset.base64 = dataURL;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 清空畫布(canvas)</span></span><br><span class="line">    canvas = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="toDataURL"><a href="#toDataURL" class="headerlink" title="toDataURL()"></a>toDataURL()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canvas.toDataURL(type, encoderOptions);</span><br></pre></td></tr></table></figure>
+<p>回傳含有圖像和參數設置特定格式 ( base 64 )的 dataURL </p>
+<ul>
+<li>type：圖像格式，預設為 image/png。</li>
+<li>encoderOptions : 圖像品質為0到1之間的Number。</li>
+</ul>
+<h3 id="drawImage"><a href="#drawImage" class="headerlink" title="drawImage()"></a>drawImage()</h3><p>在畫布上繪製圖像或視頻，也能重繪。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.drawImage(img, sx, sy, swidth, sheight, x, y, width, height);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>img：繪製圖像、畫布或視頻。</li>
+<li>sx：開始剪裁的 x 座標位置。</li>
+<li>sy：開始剪裁的 y 座標位置。</li>
+<li>swidth：被剪切圖像的寬度。</li>
+<li>sheight：被剪切圖像的高度。</li>
+<li>x：在畫布上放置圖像的 x 座標位置。</li>
+<li>y：在畫布上放置圖像的 y 座標位置。</li>
+<li>width：圖像的寬度。（伸展或縮小圖像）</li>
+<li>height：圖像的高度。（伸展或縮小圖像）</li>
+</ul>
+<h6 id="資料來源：前端通過canvas實現圖片壓縮、HTMLCanvasElement-toDataURL-、HTML5-canvas-drawImage-方法"><a href="#資料來源：前端通過canvas實現圖片壓縮、HTMLCanvasElement-toDataURL-、HTML5-canvas-drawImage-方法" class="headerlink" title="資料來源：前端通過canvas實現圖片壓縮、HTMLCanvasElement.toDataURL()、HTML5 canvas drawImage() 方法"></a>資料來源：<a target="_blank" rel="noopener" href="https://hk.saowen.com/a/950ce49d30fc5d21cc10c2b4562554b0d32d3f5dfbd89f9fb236e3b234cbfe52">前端通過canvas實現圖片壓縮</a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/API/HTMLCanvasElement/toDataURL">HTMLCanvasElement.toDataURL()</a>、<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/canvas_drawimage.asp">HTML5 canvas drawImage() 方法</a></h6><h2 id="📍FormData-送出資料"><a href="#📍FormData-送出資料" class="headerlink" title="📍FormData (送出資料)"></a>📍FormData (送出資料)</h2><p>FormData用以將數據編譯成鍵值對，以便用來發送數據。資料型態為Blob、File或者String(不是Blob也不是File，則會被轉為字串)。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fileinfo&quot;</span>&gt;</span><span class="comment">&lt;!--表單名 name=&quot;fileinfo&quot;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Your email address:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;on&quot;</span> <span class="attr">autofocus</span> <span class="attr">name</span>=<span class="string">&quot;userid&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;email&quot;</span> <span class="attr">required</span> <span class="attr">size</span>=<span class="string">&quot;32&quot;</span> <span class="attr">maxlength</span>=<span class="string">&quot;64&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="comment">&lt;!--資料名 name=&quot;userid&quot;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Custom file label:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;filelabel&quot;</span> <span class="attr">size</span>=<span class="string">&quot;12&quot;</span> <span class="attr">maxlength</span>=<span class="string">&quot;32&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="comment">&lt;!--資料名 name=&quot;filelabel&quot;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>File to stash:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span> <span class="attr">required</span> /&gt;</span><span class="comment">&lt;!--資料名 name=&quot;file&quot;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Stash the file!&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>:::warning</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fileninfo &#x3D; &#123;</span><br><span class="line">    userid: &#39;email&#39;,</span><br><span class="line">    filelabel: &#39;text&#39;,</span><br><span class="line">    file: file</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>將資料取name，FormData會自動帶入。例子資料顯示如上。<br>:::</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(<span class="built_in">document</span>.forms.namedItem(<span class="string">&quot;fileinfo&quot;</span>));  <span class="comment">// 建立表單</span></span><br><span class="line">formData.append(<span class="string">&quot;CustomField&quot;</span>, <span class="string">&quot;This is some extra data&quot;</span>);  <span class="comment">// 附加資料</span></span><br><span class="line">$.ajax(&#123;  <span class="comment">//使用jQuery傳送formData</span></span><br><span class="line">  url: <span class="string">&quot;stash.php&quot;</span>,</span><br><span class="line">  type: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">  data: formData,</span><br><span class="line">  processData: <span class="literal">false</span>,  <span class="comment">// 不處理數據</span></span><br><span class="line">  contentType: <span class="literal">false</span>   <span class="comment">// 不設置內容類型</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="append-方法"><a href="#append-方法" class="headerlink" title="append()方法"></a>append()方法</h4><p>可直接向FormData對象附加File或Blob類型的文件</p>
+<p>:::danger</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">processData: <span class="literal">false</span>,  <span class="comment">// 不處理數據</span></span><br><span class="line">contentType: <span class="literal">false</span>   <span class="comment">// 不設置內容類型</span></span><br></pre></td></tr></table></figure>
+<p>使用jQuery傳送formData一定要設置processData、contentType<br>:::</p>
+<h6 id="資料來源：FormData-对象的使用"><a href="#資料來源：FormData-对象的使用" class="headerlink" title="資料來源：FormData 对象的使用"></a>資料來源：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects">FormData 对象的使用</a></h6>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">Previous Post:<a href="/2019/11/20/react-moment/" rel="prev" 
+                        title="react-moment">react-moment
+                      </a></div>
+                
+                
+                    <div class="post-nav-item">Next Post:<a href="/2019/10/20/%E6%95%B8%E5%AD%B8%E6%96%87%E7%AB%A0%E5%AF%AB%E4%BD%9C/" rel="next" 
+                        title="數學文章寫作">數學文章寫作</a></div>
+                                
+            </div>   
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>Articles</p></a></li>
+                    <li><a href="/categories">12 <p>Categories</p></a></li>
+                    <li><a href="/tags">13 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8DInput-file-%E7%9B%B8%E6%A9%9F%E8%AA%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">📍Input file (相機調用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8DFileReader-%E8%AE%80%E5%8F%96input%E6%AA%94%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">📍FileReader (讀取input檔案)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#readAsDataURL%E6%96%B9%E6%B3%95-%E8%BD%89%E7%82%BAbase64"><span class="toc-number">2.1.</span> <span class="toc-text">readAsDataURL方法 (轉為base64)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-result-%E5%8F%96%E5%BE%97URL%E6%B8%B2%E6%9F%93%E7%9B%B8%E7%89%87"><span class="toc-number">2.2.</span> <span class="toc-text">target.result(取得URL渲染相片)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8DCanvas-%E5%A3%93%E7%B8%AE%E5%9C%96%E7%89%87"><span class="toc-number">3.</span> <span class="toc-text">📍Canvas (壓縮圖片)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#toDataURL"><span class="toc-number">3.1.</span> <span class="toc-text">toDataURL()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#drawImage"><span class="toc-number">3.2.</span> <span class="toc-text">drawImage()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8DFormData-%E9%80%81%E5%87%BA%E8%B3%87%E6%96%99"><span class="toc-number">4.</span> <span class="toc-text">📍FormData (送出資料)</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+ <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
+
+</html>

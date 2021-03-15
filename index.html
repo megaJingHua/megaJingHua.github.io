@@ -1,698 +1,882 @@
-<!DOCTYPE HTML>
-<html>
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Mega&#39;s notes</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
 
-  
-  <meta name="author" content="Mega">
-  
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 
-  
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
 
-  
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
 
-  
+    
+<link rel="stylesheet" href="/css/obsidian.css">
 
-  <meta property="og:site_name" content="Mega&#39;s notes"/>
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
 
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Mega&#39;s notes" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 5.1.1"></head>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">Mega&#39;s notes</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/about">About</a></li>
-      
-        <li><a href="/experience">Experience</a></li>
-      
-        <li><a href="/">Blog</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="ABOUT" external="false">ABOUT</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
+        
     </ul>
-  </nav>
-</header>
+    <p class="copyright" id="copyright">
+        &copy; 2021 John Doe.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
 
-    <main class="site-main posts-loop">
+<div id="container">
     
-  <article>
-
-  
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
+            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
+            <span>Please input search keywords.</span>
+        </div>
+    </div>
+</div>
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt=""> <h3 style="color:white">Mega Jing Hua</h3>
+        </div>
+        <ul id="menu-menu" class="menu text-menu">
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/whoami/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+    </div>
     
-    <h3 class="article-title"><a href="/2020/04/25/ReduxAndSaga/"><span>Redux &amp; Saga</span></a></h3>
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="/categories/GitHub"><b>「
+                </b>GITHUB<b> 」</b></a>
+            
+            January 15, 2021
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2021/01/15/Vue%20Cli%20%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2%E8%87%B3%20GitHub/" title="Vue Cli 自動部署至 GitHub" class="posttitle">Vue Cli 自動部署至 GitHub</a></h3>
+        
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>Words count</i>
+                3.2k
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                3 mins.
+            </span>
+            
+            
+        </p>
+        
+        
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+            <p>參考資料:<a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/deployment.html#%E6%B7%B7%E5%90%88%E9%83%A8%E7%BD%B2">Vue Cli 部署</a><br>在專案底下新增deploy.sh檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#...</span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2021/01/15/Vue%20Cli%20%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2%E8%87%B3%20GitHub/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
     
-  
+</div>
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/04/25/ReduxAndSaga/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-25T06:21:03.000Z">
-          2020-04-25
-        </time>
-      </a>
-    </span>
-  </div>
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="typed-text"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul>
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/React">
+                  <b>「 </b>REACT<b> 」</b>
+                </a>
+            
+            April 25, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/04/25/Redux%20&%20Saga/" title="Redux &amp; Saga" class="posttitle">Redux &amp; Saga</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        4.5k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://chentsulin.github.io/redux/docs/basics/index.html">redux 官方</a></li>
 <li><a target="_blank" rel="noopener" href="https://neighborhood999.github.io/redux-saga/docs/introduction/BeginnerTutorial.html">redux-saga 中文文件</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5c35cf00e51d45522665134b">redux-devtools-extension</a>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5c35cf00e51d45522665134b">redux-devtools-extension</a></li>
+</ul>
+<h3 id="實作範例"><a href="#實作範例" class="headerlink" title="實作範例"></a>實作範例</h3><p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch1-redux-to-do-list-707b9">CH1-Redux -To do list</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch2-redux-thunk-api-movie-list-pi1p5">CH2-Redux Thunk API-Movie list</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch3-redux-saga-api-movie-list-usjtx">CH3-Redux Saga API-Movie list</a></p>
+<h3 id="Redux-生命週期"><a href="#Redux-生命週期" class="headerlink" title="Redux 生命週期"></a>Redux 生命週期</h3><p></p>
+<h6 id="參考範例：CH1-Redux-To-do-list"><a href="#參考範例：CH1-Redux-To-do-list" class="headerlink" title="參考範例：CH1-Redux -To do list"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch1-redux-to-do-list-707b9">CH1-Redux -To do list</a></h6><ol>
+<li><strong>Action</strong>：定義 Reducer 的進入點 ( type )</li>
+<li><strong>Reducer</strong>：由 Action 進入，對資料作用並儲存<ul>
+<li><strong>combineReducers...</strong></li></ul></li></ol>
+            
+            <span class="read-more"><a href="/2020/04/25/Redux%20&%20Saga/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/React">
+                  <b>「 </b>REACT<b> 」</b>
+                </a>
+            
+            April 10, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/04/10/Hook%E2%80%99s%20UseContext%20&%20UseReducer/" title="Hook&#39;s UseContext &amp; UseReducer" class="posttitle">Hook&#39;s UseContext &amp; UseReducer</a></h3>
         
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/React/">React</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/04/10/useContextAndUseReducer/"><span>Hook&#39;s UseContext &amp; UseReducer</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/04/10/useContextAndUseReducer/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-10T03:20:18.000Z">
-          2020-04-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="實作範例"><a href="#實作範例" class="headerlink" title="實作範例"></a>實作範例</h3><p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch4-hooks-number--pbio5">CH4-Hooks useContext-Number+-</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch4-hooks-number--pbio5">CH5-Hooks useReducer</a></p>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        8.1k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        7 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="實作範例"><a href="#實作範例" class="headerlink" title="實作範例"></a>實作範例</h3><p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch4-hooks-number--pbio5">CH4-Hooks useContext-Number+-</a><br><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch4-hooks-number--pbio5">CH5-Hooks useReducer</a></p>
 <h3 id="UseReducer"><a href="#UseReducer" class="headerlink" title="UseReducer"></a>UseReducer</h3><h6 id="參考範例：CH5-Hooks-useReducer"><a href="#參考範例：CH5-Hooks-useReducer" class="headerlink" title="參考範例：CH5-Hooks useReducer"></a>參考範例：<a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch4-hooks-number--pbio5">CH5-Hooks useReducer</a></h6><ul>
-<li>將資料傳入 state，並使用 dispatch 做 reducer 的溝通
+<li>將資料傳入 state，並使用 dispatch 做 reducer 的溝通<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;todoReducer,initState&#125; <span class="keyword">from</span> <span class="string">&#x27;./reducer&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [listName, setListName] = useState(‘’)</span><br><span class="line"><span class="keyword">const...</span></span></pre></td></tr></table></figure></li></ul>
+            
+            <span class="read-more"><a href="/2020/04/10/Hook%E2%80%99s%20UseContext%20&%20UseReducer/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/程式基礎">
+                  <b>「 </b>程式基礎<b> 」</b>
+                </a>
+            
+            March 15, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/15/%E8%AE%93%20Google%20%E6%95%99%E4%BD%A0%20Code%20Review/" title="讓 Google 教你 Code Review!" class="posttitle">讓 Google 教你 Code Review!</a></h3>
         
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/React/">React</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/03/15/googleCodeReview/"><span>讓 Google 教你 Code Review!</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/03/15/googleCodeReview/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-03-15T06:13:26.000Z">
-          2020-03-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h6 id="參考資料：讓-Google-教你-Code-Review"><a href="#參考資料：讓-Google-教你-Code-Review" class="headerlink" title="參考資料：讓 Google 教你 Code Review!"></a>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@ryanyang1221/%E8%AE%93-google-%E6%95%99%E4%BD%A0-code-review-be251d4d81b4">讓 Google 教你 Code Review!</a></h6><h6 id="註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。"><a href="#註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。" class="headerlink" title="註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。"></a>註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。</h6><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>:::warning<br>Code Review 的本質就是要讓我們的 Codebase 能夠維持一定的健康度並且是不斷地進步的。<br>:::</p>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        5k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        5 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%A8%8B%E5%BC%8F%E5%9F%BA%E7%A4%8E/" rel="tag">程式基礎</a></li></ul>
+            
         
-      
+        <div class="md-content animated fadeIn">
+            
+                <h6 id="參考資料：讓-Google-教你-Code-Review"><a href="#參考資料：讓-Google-教你-Code-Review" class="headerlink" title="參考資料：讓 Google 教你 Code Review!"></a>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@ryanyang1221/%E8%AE%93-google-%E6%95%99%E4%BD%A0-code-review-be251d4d81b4">讓 Google 教你 Code Review!</a></h6><h6 id="註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。"><a href="#註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。" class="headerlink" title="註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。"></a>註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。</h6><p>:::warning<br>Code Review 的本質就是要讓我們的 Codebase 能夠維持一定的健康度並且是不斷地進步的。<br>:::</p>
+<ul>
+<li>==Reviewer== 應避免一次給出許多難做的建議，因為會抑制 Developer 想要改進的心。</li>
+<li>可以讓 Codebase 有所進...</li></ul>
+            
+            <span class="read-more"><a href="/2020/03/15/%E8%AE%93%20Google%20%E6%95%99%E4%BD%A0%20Code%20Review/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
+</div>
 
-  </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/程式基礎/">程式基礎</a>
-    </span>
-    
-
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/03/10/更改使用者權限/"><span>SSH 更改使用者權限</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/03/10/更改使用者權限/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-03-10T07:10:44.000Z">
-          2020-03-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="更改權限"><a href="#更改權限" class="headerlink" title="更改權限"></a>更改權限</h2><h3 id="1-登入"><a href="#1-登入" class="headerlink" title="1.登入"></a>1.登入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh mp_10740@192.168.100.26</span><br></pre></td></tr></table></figure>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/伺服器">
+                  <b>「 </b>伺服器<b> 」</b>
+                </a>
+            
+            March 10, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/10/%E6%9B%B4%E6%94%B9%E4%BD%BF%E7%94%A8%E8%80%85%E6%AC%8A%E9%99%90/" title="SSH 更改使用者權限" class="posttitle">SSH 更改使用者權限</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        3.6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/" rel="tag">伺服器</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="1-登入"><a href="#1-登入" class="headerlink" title="1.登入"></a>1.登入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh mp_10740@192.168.100.26</span><br></pre></td></tr></table></figure>
 <p>==輸入密碼時不顯示==</p>
-<h3 id="2-進入root權限"><a href="#2-進入root權限" class="headerlink" title="2.進入root權限"></a>2.進入root權限</h3>
+<h3 id="2-進入root權限"><a href="#2-進入root權限" class="headerlink" title="2.進入root權限"></a>2.進入root權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+<h3 id="3-進入資料夾"><a href="#3-進入資料夾" class="headerlink" title="3.進入資料夾"></a>3.進入資料夾</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;var&#x2F;www&#x2F;html&#x2F;frontend-youbike-webapp</span><br></pre></td></tr></table></figure>
+<h3 id="4-更改權限"><a href="#4-更改權限" class="headerlink" title="4.更改權限"></a>4.更改權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 775 -R *</span><br></pre></td></tr></table></figure>
+<p>==-R：子目錄== ==*：所有的==</p>
+<h3 id="權限含義"><a href="#權限含義" class="headerlink" title="權限含義"></a>權限含義</h3><p><br>:::info<br>R:可讀 (2^2=4)<br>W:可寫 (2^1=2)<br>X:可執行 (2^0=1)<br>依上圖可算為檔案權限：7(r+w+x=7)5(r...</p>
+            
+            <span class="read-more"><a href="/2020/03/10/%E6%9B%B4%E6%94%B9%E4%BD%BF%E7%94%A8%E8%80%85%E6%AC%8A%E9%99%90/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/Line Chatbot">
+                  <b>「 </b>LINE CHATBOT<b> 」</b>
+                </a>
+            
+            March 02, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/02/%E9%81%8A%E6%88%B2%E6%80%AA%E7%89%A9%E5%90%8D%E7%A8%B1%E6%90%9C%E5%B0%8B%20Line%20Chatbot/" title="遊戲怪物名稱搜尋 Line Chatbot " class="posttitle">遊戲怪物名稱搜尋 Line Chatbot </a></h3>
         
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/伺服器/">伺服器</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/伺服器/">伺服器</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/03/02/遊戲怪物名稱搜尋LineChatbot/"><span>遊戲怪物名稱搜尋 Line Chatbot</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/03/02/遊戲怪物名稱搜尋LineChatbot/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-03-02T03:12:45.000Z">
-          2020-03-02
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="1-建立-怪物-Google-表單-作為資料庫"><a href="#1-建立-怪物-Google-表單-作為資料庫" class="headerlink" title="1.建立 怪物 Google 表單(作為資料庫)"></a>1.建立 怪物 Google 表單(作為資料庫)</h2><pre><code>檔案&gt;發佈到網路，選擇.CSV路徑即可使用</code></pre>
-<p><img src="https://i.imgur.com/CbvAozM.png"></p>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        25k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        22 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/GCP/" rel="tag">GCP</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Line-Chatbot/" rel="tag">Line Chatbot</a></li></ul>
+            
         
-      
+        <div class="md-content animated fadeIn">
+            
+                <h6 id="tags-Line-Chatbot"><a href="#tags-Line-Chatbot" class="headerlink" title="tags: Line Chatbot"></a>tags: <code>Line Chatbot</code></h6><pre><code>檔案&gt;發佈到網路，選擇.CSV路徑即可使用
+</code></pre>
+<p></p>
+<pre><code>於 Line Developer 建立 Chatbot，並取得 LINE_ACCESS_TOKEN (Assertion Signing Key 
+</code></pre>
+<p>)<br></p>
+<p>所使用到的範圍為 index.js、package.json 與 環境變數</p>
+<p></p>
+<h4 id="環境變數"><a href="#環境變數" class="headerlink" title="環境變數"></a>環境變數</h4><pre><code>設定LINE_ACCESS_TOKEN
+</code></pre>
+<p></p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><pre><code>載入套件
+</code></pre>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;...</span></span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2020/03/02/%E9%81%8A%E6%88%B2%E6%80%AA%E7%89%A9%E5%90%8D%E7%A8%B1%E6%90%9C%E5%B0%8B%20Line%20Chatbot/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
+</div>
 
-  </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Line-Chatbot/">Line Chatbot</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Line-Chatbot/">Line Chatbot</a>
-    </span>
-    
-
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/02/21/最高休息法/"><span>最高休息法</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/02/21/最高休息法/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-02-21T07:15:43.000Z">
-          2020-02-21
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><img src="https://i.imgur.com/WwRq0QW.png"><br>  作者將此休息法以自身經歷的方式述說並實際達成目標，其中將各種方式以大腦結構研究佐證，說明大腦結構是交互作用。在開頭直接告知七種休息方法後並開始自身經歷的述說，讀者可自由選擇想知道的部分。</p>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/閱讀書籍">
+                  <b>「 </b>閱讀書籍<b> 」</b>
+                </a>
+            
+            February 01, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/02/01/%E6%9C%80%E9%AB%98%E4%BC%91%E6%81%AF%E6%B3%95/" title="最高休息法" class="posttitle">最高休息法</a></h3>
         
-      
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        8.2k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        7 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%9B%B8%E7%B1%8D/" rel="tag">書籍</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h6 id="tags-書籍"><a href="#tags-書籍" class="headerlink" title="tags: 書籍"></a>tags: <code>書籍</code></h6><p><br>  作者將此休息法以自身經歷的方式述說並實際達成目標，其中將各種方式以大腦結構研究佐證，說明大腦結構是交互作用。在開頭直接告知七種休息方法後並開始自身經歷的述說，讀者可自由選擇想知道的部分。</p>
+<p><br>預設模式網路（Default Model Network, DMN）也就是所謂的「大腦暗能量」，會在大腦未進行有意識活動時執行基本運作。即使在發呆，只要 DMN 持續過度運作，腦袋就會越來越累。</p>
+<p>需要==建立可抑制 DMN 運作的大腦結構==，DMN 主要的活動可藉由冥想或穿顱磁刺激（Transcranial...</p>
+            
+            <span class="read-more"><a href="/2020/02/01/%E6%9C%80%E9%AB%98%E4%BC%91%E6%81%AF%E6%B3%95/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
+</div>
 
-  </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/書籍/">書籍</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/書籍/">書籍</a>
-    </span>
-    
-
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/12/12/JSDoc/"><span>JS Doc</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/12/12/JSDoc/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-12-12T08:20:24.000Z">
-          2019-12-12
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h6 id="tags-程式註解"><a href="#tags-程式註解" class="headerlink" title="tags: 程式註解"></a>tags: <code>程式註解</code></h6><h2 id="安裝-jsDoc"><a href="#安裝-jsDoc" class="headerlink" title="安裝 jsDoc"></a>安裝 jsDoc</h2><p>全域安装：</p>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/程式註解">
+                  <b>「 </b>程式註解<b> 」</b>
+                </a>
+            
+            December 12, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/12/12/JS%20Doc/" title="JS Doc" class="posttitle">JS Doc</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        4.7k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%A8%8B%E5%BC%8F%E8%A8%BB%E8%A7%A3/" rel="tag">程式註解</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>全域安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g jsdoc</span><br></pre></td></tr></table></figure>
+<p>目錄安裝：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -d jsdoc</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-建立-jsdoc-json-設定檔"><a href="#1-建立-jsdoc-json-設定檔" class="headerlink" title="1. 建立 jsdoc.json 設定檔"></a>1. 建立 jsdoc.json 設定檔</h5><h6 id="jsdoc-json"><a href="#jsdoc-json" class="headerlink" title="jsdoc.json"></a>jsdoc.json</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;source&quot;: &#123;</span><br><span class="line">	&quot;include&quot;: [ &quot;js/getdata&quot; ],</span><br><span class="line">	&quot;includePattern&quot;: &quot;.+\\.js(doc)?$&quot;, // 以.js, .jsdoc的文件作...</span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2019/12/12/JS%20Doc/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/React">
+                  <b>「 </b>REACT<b> 」</b>
+                </a>
+            
+            November 20, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/20/react-moment/" title="react-moment" class="posttitle">react-moment</a></h3>
         
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/程式註解/">程式註解</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/11/20/react-moment/"><span>react-moment</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/11/20/react-moment/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-11-20T07:46:07.000Z">
-          2019-11-20
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save moment react-moment</span><br></pre></td></tr></table></figure>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        7.6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        7 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+            
         
-      
+        <div class="md-content animated fadeIn">
+            
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save moment react-moment</span><br></pre></td></tr></table></figure>
+<p>import the package into your project.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import React from &#39;react&#39;;</span><br><span class="line">import Moment from &#39;react-moment&#39;;</span><br><span class="line"> </span><br><span class="line">export default class App extends React.Component &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>react</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import...</span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2019/11/20/react-moment/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
+</div>
 
-  </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/React/">React</a>
-    </span>
-    
-
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/11/10/photoBase64/"><span>相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/11/10/photoBase64/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-11-10T02:21:39.000Z">
-          2019-11-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="📍Input-file-相機調用"><a href="#📍Input-file-相機調用" class="headerlink" title="📍Input file (相機調用)"></a>📍Input file (相機調用)</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&#x27;img&#x27;</span> <span class="attr">id</span>=<span class="string">&#x27;input&#x27;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&#x27;camera&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/Javascript">
+                  <b>「 </b>JAVASCRIPT<b> 」</b>
+                </a>
+            
+            November 10, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/10/%E7%9B%B8%E6%A9%9F%E8%AA%BF%E7%94%A8%E8%88%87%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE/" title="相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出" class="posttitle">相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        20k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        18 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&#x27;img&#x27;</span> <span class="attr">id</span>=<span class="string">&#x27;input&#x27;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&#x27;camera&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>accept：開啟系統檔案類型<blockquote>
 <p>camera–照相機；camcorder–攝像機；microphone–錄音</p>
-        
-      
+</blockquote>
+</li>
+<li>capture：調用系統預設的裝置<br>:::warning<br>備註 ...</li></ul>
+            
+            <span class="read-more"><a href="/2019/11/10/%E7%9B%B8%E6%A9%9F%E8%AA%BF%E7%94%A8%E8%88%87%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Javascript/">Javascript</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2019/10/20/context/"><span>數學文章寫作</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2019/10/20/context/" rel="bookmark">
-        <time class="entry-date published" datetime="2019-10-20T02:27:36.000Z">
-          2019-10-20
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p><a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/docs/context.html">Context</a></p>
-<h3 id="實作範例"><a href="#實作範例" class="headerlink" title="實作範例"></a>實作範例</h3><p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/ch6-context-api-movie-list-zunlp">CH6-Context API-Movie list</a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/前端/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/React/">React</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-  <a href="/page/2/" class="pagination-next">Next</a>
-  
-</nav>
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2020 Mega
-    
-  </p>
-</footer>
-    
-  </div>
 </div>
+
+
+    </div>
+    
+    <div id="pager"><a href="/page/2/" class="more" data-loading="加载中..." data-load-more="Load more">Load more</a></div>
+    
+</div>
+<div id="preview"></div>
+
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
 </body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+ <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
+
 </html>

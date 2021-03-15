@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>壓縮 commit - squash - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="
+start a working area (see also: git help tutorial) clone—–Clone a repository into a new directory ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">壓縮 commit - squash</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Git"><b>「
+                    </b>GIT<b> 」</b></a>
+                
+                December 01, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/12/01/%E5%B8%B8%E7%94%A8%20Git%20%E6%8C%87%E4%BB%A4/" title="壓縮 commit - squash" class="">壓縮 commit - squash</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    6.4k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    6 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <ul>
+<li><p><strong>start a working area (see also: git help tutorial)</strong><br> clone—–Clone a repository into a new directory<br> init—–Create an empty Git repository or reinitialize an existing one</p>
+</li>
+<li><p><strong>work on the current change (see also: git help everyday)</strong><br> add—–Add file contents to the index<br> mv—–Move or rename a file, a directory, or a symlink<br> reset—–Reset current HEAD to the specified state<br> rm—–Remove files from the working tree and from the index</p>
+</li>
+<li><p><strong>examine the history and state (see also: git help revisions)</strong><br> bisect—–Use binary search to find the commit that introduced a bug<br> grep—–Print lines matching a pattern<br> log—–Show commit logs<br> show—–Show various types of objects<br> status—–Show the working tree status</p>
+</li>
+<li><p><strong>grow, mark and tweak your common history</strong><br> branch—–List, create, or delete branches<br> checkout—–Switch branches or restore working tree files<br> commit—–Record changes to the repository<br> diff—–Show changes between commits, commit and working tree, etc<br> merge—–Join two or more development histories together<br> rebase—–Reapply commits on top of another base tip<br> tag—–Create, list, delete or verify a tag object signed with GPG</p>
+</li>
+<li><p><strong>collaborate (see also: git help workflows)</strong><br> fetch—–Download objects and refs from another repository<br> pull—–Fetch from and integrate with another repository or a local branch<br> push—–Update remote refs along with associated objects</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>git status (檢視有無修改)<br>git add . (將修正資料增加上去)<br>git commit -m ‘xxx’ (命名)<br>git commit -am ‘xxx’ (add + commit)<br>git push origin xxx (將資料推上去)</p>
+</blockquote>
+<blockquote>
+<p>git init (初始化儲存庫/初始化資料夾)<br>git clone (將存儲庫資料下載到新目錄中)</p>
+</blockquote>
+<blockquote>
+<p>git branch xxx(建立分支)<br>git checkout xxx(進入分支)<br>git checkout -b ‘xxx’(branch+checkout)<br>git pull (載入資料最新版本)</p>
+</blockquote>
+<blockquote>
+<p>git checkout – xxx(放棄此分枝)</p>
+</blockquote>
+<blockquote>
+<p>git fetch –all(下載當前最新分支，不是下載資料)<br>git rebase origin xxx(檢查最新分支與自己的分支有沒有衝突)</p>
+</blockquote>
+<h1 id="dos指令"><a href="#dos指令" class="headerlink" title="dos指令"></a>dos指令</h1><pre><code>dir (顯示目錄中的檔案)
+cd (進資料夾)
+</code></pre>
+<h1 id="剛開始進入Git"><a href="#剛開始進入Git" class="headerlink" title="剛開始進入Git"></a>剛開始進入Git</h1><p><strong>1. 產生SSH Key</strong></p>
+<pre><code>git ssh-keygen -t ras -c &#39;xxx.mail&#39;
+...(enter)
+git cat ~/.ssh/id_rsa.pub
+...(copy)
+登入Gitlab&gt;Setting&gt;SSH Key(paste)
+</code></pre>
+<p><strong>2. 建立新資料夾</strong></p>
+<pre><code>mkdir xxx(新增xxx資料夾)
+cd xxx(進入xxx資料夾)
+git init (初始化資料夾)
+</code></pre>
+<p><strong>3. 載入資料庫</strong></p>
+<pre><code>it clone xxx.git (載入資料庫)
+</code></pre>
+<p><strong>4. 進入分支</strong></p>
+<pre><code>git checkout develop (進入develop分支)
+git pull (確認版本是否最新)
+git checkout -b xxx (建立新分支xxx)
+</code></pre>
+<p><strong>4. 上傳修改資料</strong></p>
+<pre><code>git status (確認修改狀態)
+git add . (將修改後資料新增至分支)
+git commit -m &#39;xxx&#39; (資料命名)
+git push origin xxx (將資料上傳)
+</code></pre>
+<h1 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h1><p>將本機資料更新再出發<br><a target="_blank" rel="noopener" href="https://hackmd.io/p/B1TFT8Z9z#/">https://hackmd.io/p/B1TFT8Z9z#/</a><br><strong>1.切到本機分支將遠端分支載下來(develop)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br><span class="line">git fetch --all</span><br><span class="line">git pull origin develop</span><br></pre></td></tr></table></figure>
+<p><strong>2.切到自己的分支上更新(feature/134)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature&#x2F;134</span><br><span class="line">git rebase origin&#x2F;debelop</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.如有衝突就修正</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git rebase --continue</span><br><span class="line">git push origin&#x2F;feature&#x2F;134</span><br></pre></td></tr></table></figure>
+
+<h1 id="Megre"><a href="#Megre" class="headerlink" title="Megre"></a>Megre</h1><p><strong>每個功能Megre(方便閱讀與退版)</strong><br>到GitLab操作<br>1.Megre Reuests&gt;New merge request<br>記得勾選Remove source….(刪除當前分支)</p>
+<h1 id="刪除分枝"><a href="#刪除分枝" class="headerlink" title="刪除分枝"></a>刪除分枝</h1><h5 id="刪除遠端分枝"><a href="#刪除遠端分枝" class="headerlink" title="刪除遠端分枝"></a>刪除遠端分枝</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">去gitlab刪</span><br></pre></td></tr></table></figure>
+<h5 id="刪除本機分之"><a href="#刪除本機分之" class="headerlink" title="刪除本機分之"></a>刪除本機分之</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature&#x2F;0</span><br></pre></td></tr></table></figure>
+
+<h1 id="設定oring"><a href="#設定oring" class="headerlink" title="設定oring"></a>設定oring</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream-to&#x3D;origin&#x2F;&lt;branch&gt; feature&#x2F;8</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>commit -am(feature)<br>checkout develop<br>pull(develop)<br>checkout feature<br>rebase develop(feature)<br>push origin feature</p>
+<h1 id="強制恢復到上一版本"><a href="#強制恢復到上一版本" class="headerlink" title="強制恢復到上一版本"></a>強制恢復到上一版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~3</span><br></pre></td></tr></table></figure>
+<p>這指令意思是說，最後三個版本 (HEAD, HEAD^, and HEAD~2)砍掉</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">Previous Post:<a href="/2018/12/11/%E5%A3%93%E7%B8%AE%20commit%20-%20squash/" rel="prev" 
+                        title="壓縮 commit - squash">壓縮 commit - squash
+                      </a></div>
+                
+                                
+            </div>   
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>Articles</p></a></li>
+                    <li><a href="/categories">12 <p>Categories</p></a></li>
+                    <li><a href="/tags">13 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dos%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">dos指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%9B%E9%96%8B%E5%A7%8B%E9%80%B2%E5%85%A5Git"><span class="toc-number">2.</span> <span class="toc-text">剛開始進入Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rebase"><span class="toc-number">3.</span> <span class="toc-text">Rebase</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Megre"><span class="toc-number">4.</span> <span class="toc-text">Megre</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%AA%E9%99%A4%E5%88%86%E6%9E%9D"><span class="toc-number">5.</span> <span class="toc-text">刪除分枝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9Aoring"><span class="toc-number">6.</span> <span class="toc-text">設定oring</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B7%E5%88%B6%E6%81%A2%E5%BE%A9%E5%88%B0%E4%B8%8A%E4%B8%80%E7%89%88%E6%9C%AC"><span class="toc-number">8.</span> <span class="toc-text">強制恢復到上一版本</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+ <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
+
+</html>

@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>讓 Google 教你 Code Review! - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="參考資料：讓 Google 教你 Code Review!註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">讓 Google 教你 Code Review!</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/程式基礎"><b>「
+                    </b>程式基礎<b> 」</b></a>
+                
+                March 15, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/03/15/%E8%AE%93%20Google%20%E6%95%99%E4%BD%A0%20Code%20Review/" title="讓 Google 教你 Code Review!" class="">讓 Google 教你 Code Review!</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    5k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    5 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%A8%8B%E5%BC%8F%E5%9F%BA%E7%A4%8E/" rel="tag">程式基礎</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h6 id="參考資料：讓-Google-教你-Code-Review"><a href="#參考資料：讓-Google-教你-Code-Review" class="headerlink" title="參考資料：讓 Google 教你 Code Review!"></a>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@ryanyang1221/%E8%AE%93-google-%E6%95%99%E4%BD%A0-code-review-be251d4d81b4">讓 Google 教你 Code Review!</a></h6><h6 id="註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。"><a href="#註-以下會提到的-CL-指得是-Change-list，也就是-Developer-想要-Submit-進-Version-control-並且被-Review-的東西。" class="headerlink" title="註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。"></a>註: 以下會提到的 CL 指得是 Change list，也就是 Developer 想要 Submit 進 Version control 並且被 Review 的東西。</h6><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>:::warning<br>Code Review 的本質就是要讓我們的 Codebase 能夠維持一定的健康度並且是不斷地進步的。<br>:::</p>
+<ul>
+<li>==Reviewer== 應避免一次給出許多難做的建議，因為會抑制 Developer 想要改進的心。</li>
+<li>可以讓 Codebase 有所進步，不管是功能上，可維護性，可讀性等等，就應該給出 ==Approval==。  ::: danger<br>  因為只有更好的 Code，而沒有完美的 Code。<br>  :::</li>
+<li>==Comment== 如果有看看就好或留下一些新的知識要分享給 Developer 可在前方加上 Nit:。</li>
+</ul>
+<h2 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h2><ol>
+<li>給出技術上的建議，而不是個人偏好。</li>
+<li>Coding style &gt; Developer 習慣。</li>
+<li>假使有些部分並沒有規則可以參考，應該要求遵從原來的做法以保持一致性。<br>:::danger<br>假使 Reviewer 和 Developer 沒有辦法達成共識，應該進一步開啟一個 Face to Face 的會談或是請 maintainer、技術主管一起討論。<br>:::</li>
+</ol>
+<h2 id="實際上要看些什麼呢"><a href="#實際上要看些什麼呢" class="headerlink" title="實際上要看些什麼呢?"></a>實際上要看些什麼呢?</h2><ol>
+<li><p>Design：CL 的 code 是否合理？與 Component 或 Library 是否可整合？在這個時間點是否加入這個改動？</p>
+</li>
+<li><p>Functionality：從功能面來看是否有達到原來的目標呢？對未來的使用者是否帶來益處呢？Reviewer 在這裡也要扮演 User 的角色去思考問題，有時間應該進行測試。</p>
+</li>
+<li><p>Complexity：是否寫得過於複雜？太複雜帶來的問題是，可讀性變差，以及在使用或是修改的時候容易引入 Bug。<br> :::danger<br> Code 應保有彈性和可讀性，在未來可好修改，但不要去預設未來功能而提早設計，很有可能用不到又會讓當前的焦點被模糊。<br> :::</p>
+</li>
+<li><p>Tests：確保這些測試是有意義的，並且是正確的。Tests 應該被視為 Production 的一部分，用來保護 Codebase，所以也要具備可讀性與<br>可維護性。</p>
+</li>
+<li><p>Naming：要能夠清楚表達這是什麼以==維持可讀性==。</p>
+</li>
+<li><p>Comment：要寫的是這段 Code 為什麼存在，主要是為了達到什麼效果。</p>
+</li>
+<li><p>Style：有 Style guide 就應該要遵從。假設有額外習慣的 Style guide，就如同先前所說應該要加上 Nit: 避免讓 Style 的問題卡住了這個 CL 。</p>
+</li>
+<li><p>Documentation：如果我們有 Codebase 文件，需注意這次的 CL 是否也要同步。</p>
+</li>
+<li><p>Every line：要能夠理解每行 Code，假設無法理解就讓 Developer 說明，這同時也是幫助未來其他人也能夠理解。</p>
+</li>
+<li><p>Context：即使改動的部分很少也要觀看整個 Function，避免增加系統的複雜度等等。</p>
+</li>
+<li><p>Good things：Code review 不該只是找錯誤，如果寫得好可以留下讚美，帶來正面的助益。</p>
+</li>
+</ol>
+<h2 id="Code-Review-的步驟"><a href="#Code-Review-的步驟" class="headerlink" title="Code Review 的步驟"></a>Code Review 的步驟</h2><h3 id="1-Take-a-broad-view-of-the-change"><a href="#1-Take-a-broad-view-of-the-change" class="headerlink" title="1.Take a broad view of the change"></a>1.Take a broad view of the change</h3><p>==從整體的角度來觀看這次的 CL，假設有些改動根本不應該發生，應立即向 Developer 提出並給予解釋及應該要做什麼的指示==。我們可以說： 「感謝你認真思考並且努力去修改 XXX 的部分，只是因為 XXX 之後可能也不會再用，所以應該要再麻煩你改成針對 YYY 去修改」。</p>
+<h3 id="2-Examine-the-main-parts-of-the-CL"><a href="#2-Examine-the-main-parts-of-the-CL" class="headerlink" title="2.Examine the main parts of the CL"></a>2.Examine the main parts of the CL</h3><p>找出最多邏輯改動的那個檔案，當作是主要修改的部分，這能夠幫助我們在之後觀看其他檔案的小改動時，更能夠知道為什麼會有這些的改動。</p>
+<h3 id="3-Look-through-the-rest-of-the-CL-in-an-appropriate-sequence"><a href="#3-Look-through-the-rest-of-the-CL-in-an-appropriate-sequence" class="headerlink" title="3.Look through the rest of the CL in an appropriate sequence"></a>3.Look through the rest of the CL in an appropriate sequence</h3><p>當主要的部分沒問題，就把剩下的部分看完。如果有測試的話，就先從測試開始看，再來看 Code 本身會比較有效率。</p>
+<h2 id="Code-Review-的速度"><a href="#Code-Review-的速度" class="headerlink" title="Code Review 的速度"></a>Code Review 的速度</h2><ul>
+<li>這裡我們所要求的速度是回應的速度。</li>
+<li>在收到 Request 的時候進行 Review，最遲也不要超過一個工作天。</li>
+<li><strong>假設 Code review 太慢會發生甚麼事?</strong><ol>
+<li>開發速度會被拖累，後續的進度也會卡住。</li>
+<li>如果做大改動，Developer 的心情應該不會太好且Developer 也需花時間改。</li>
+<li>有時程壓力的情況下，可能導致 Developer 提早交出一個不是那麼好的 CL。</li>
+</ol>
+</li>
+</ul>
+<h2 id="如何撰寫-Comment"><a href="#如何撰寫-Comment" class="headerlink" title="如何撰寫 Comment"></a>如何撰寫 Comment</h2><ol>
+<li><p><strong>友善與尊重的語氣</strong>，不要直接問為什麼你要這麼做，而是提出這麼做有什麼不好的地方並且該要怎麼改善。</p>
+</li>
+<li><p><strong>充分給予說明</strong>，盡量提出給這些建議的原因。</p>
+</li>
+<li><p><strong>在直接點出問題給出答案以及給 Developer 做一些思考和決定的空間。</strong><br> ::: warning<br> 把 Code 改好是 Developer 的責任，Reviewer 做的是點出問題並且給予方向，這樣 Developer 才能夠去學習並內化。<br> :::</p>
+</li>
+<li><p><strong>鼓勵 Developer 把程式碼簡化或是留下註解</strong>，而不是花很多時間解釋複雜的東西給你聽。</p>
+<h2 id="如何面對-Developer-的反饋"><a href="#如何面對-Developer-的反饋" class="headerlink" title="如何面對 Developer 的反饋"></a>如何面對 Developer 的反饋</h2></li>
+</ol>
+<ul>
+<li><p>Developer 有時候會不同意 Reviewer 的意見，==假使 Developer 解釋你認同且認定不會對 Codebase 有損害時，就應該承認 Developer 是對的==。</p>
+</li>
+<li><p>如果 Reviewer 相信自己的部分是對的，就該繼續跟 Developer 解釋。(注意：過程必須==保持尊重==且讓 Developer 瞭解到他們的聲音是有被聽見的。)</p>
+</li>
+<li><p>有時候 Developer 會對你的嚴格會有所抱怨，但如果這對他們真的是好的，這些抱怨在未來會漸漸消失，請讓 Developer 感到你的友善以及尊重。</p>
+</li>
+</ul>
+<ul>
+<li>有些 Developer 會說留著下次改，但通常==現在不改，以後大概也不會改了，因為新的事情會一直來==，所以還是要堅持讓 Developer 在這一次就改好才能進 Codebase。</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">Previous Post:<a href="/2020/04/10/Hook%E2%80%99s%20UseContext%20&%20UseReducer/" rel="prev" 
+                        title="Hook's UseContext & UseReducer">Hook's UseContext & UseReducer
+                      </a></div>
+                
+                
+                    <div class="post-nav-item">Next Post:<a href="/2020/03/10/%E6%9B%B4%E6%94%B9%E4%BD%BF%E7%94%A8%E8%80%85%E6%AC%8A%E9%99%90/" rel="next" 
+                        title="SSH 更改使用者權限">SSH 更改使用者權限</a></div>
+                                
+            </div>   
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>Articles</p></a></li>
+                    <li><a href="/categories">12 <p>Categories</p></a></li>
+                    <li><a href="/tags">13 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%89%87"><span class="toc-number">2.</span> <span class="toc-text">原則</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%A6%E9%9A%9B%E4%B8%8A%E8%A6%81%E7%9C%8B%E4%BA%9B%E4%BB%80%E9%BA%BC%E5%91%A2"><span class="toc-number">3.</span> <span class="toc-text">實際上要看些什麼呢?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Review-%E7%9A%84%E6%AD%A5%E9%A9%9F"><span class="toc-number">4.</span> <span class="toc-text">Code Review 的步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Take-a-broad-view-of-the-change"><span class="toc-number">4.1.</span> <span class="toc-text">1.Take a broad view of the change</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Examine-the-main-parts-of-the-CL"><span class="toc-number">4.2.</span> <span class="toc-text">2.Examine the main parts of the CL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Look-through-the-rest-of-the-CL-in-an-appropriate-sequence"><span class="toc-number">4.3.</span> <span class="toc-text">3.Look through the rest of the CL in an appropriate sequence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Review-%E7%9A%84%E9%80%9F%E5%BA%A6"><span class="toc-number">5.</span> <span class="toc-text">Code Review 的速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%92%B0%E5%AF%AB-Comment"><span class="toc-number">6.</span> <span class="toc-text">如何撰寫 Comment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%9D%A2%E5%B0%8D-Developer-%E7%9A%84%E5%8F%8D%E9%A5%8B"><span class="toc-number">7.</span> <span class="toc-text">如何面對 Developer 的反饋</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+ <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
+
+</html>
