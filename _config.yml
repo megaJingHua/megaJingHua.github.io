@@ -1,4 +1,4 @@
-title: Mega 的技術筆記
+title: Mega's Note
 name: Mega
 description: "這裡記錄了我的技術筆記與學習歷程，歡迎參考與分享"
 url: "https://megaJingHua.github.io"
@@ -14,8 +14,8 @@ markdown: kramdown
 highlighter: rouge
 author:
   name: "Mega"
-  avatar: "/assets/images/avatar.png"
-  bio: "前端 & 系統分析師，熱愛知識分享。"
+  avatar: "/assets/images/avatar1.png"
+  bio: "前端 & 系統分析師，好奇心滿滿，熱愛分享與交流。"
   location: "Taiwan"
   links:
     - label: "GitHub"
@@ -23,4 +23,4 @@ author:
       url: "https://github.com/megaJingHua"
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your@email.com"
+      url: "h12732u@gmail.com"
