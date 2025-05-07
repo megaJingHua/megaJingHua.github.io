@@ -9,7 +9,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-include-cache
-paginate: 10
+paginate: 999
 paginate_path: "/page:num"
 markdown: kramdown
 highlighter: rouge
