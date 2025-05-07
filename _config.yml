@@ -1,13 +1,26 @@
-title: Mega 的部落格
+title: Mega 的技術筆記
 name: Mega
-description: "這是我的個人部落格，用 GitHub Pages 與 Minimal Mistakes 架設"
+description: "這裡記錄了我的技術筆記與學習歷程，歡迎參考與分享"
 url: "https://megaJingHua.github.io"
 baseurl: ""
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-include-cache
-paginate: 5
+paginate: 10
 markdown: kramdown
+highlighter: rouge
+author:
+  name: "Mega"
+  avatar: "/assets/images/avatar.png"
+  bio: "前端 & 系統分析師，好奇心滿滿，熱愛分享與交流。"
+  location: "Taiwan"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/megaJingHua"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "h12732u@gmail.com"
