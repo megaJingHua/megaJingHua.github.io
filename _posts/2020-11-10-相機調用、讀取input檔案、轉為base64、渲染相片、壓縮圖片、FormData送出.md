@@ -2,7 +2,7 @@
 title: 相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出
 tags: [Javascript]
 layout: single
-date: 2020-03-04
+date: 2020-11-10
 toc: true
 toc_sticky: true
 

@@ -2,7 +2,7 @@
 title: Android APP 打包 for Window
 tags: [React Native]
 layout: single
-date: 2020-03-03
+date: 2020-02-10
 toc: true
 toc_sticky: true
 ---
