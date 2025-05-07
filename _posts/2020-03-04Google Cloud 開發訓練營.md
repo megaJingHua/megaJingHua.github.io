@@ -1,7 +1,8 @@
 ---
 title: Google Cloud 開發訓練營
 tags: [Google Cloud]
-
+layout: single
+date: 2020-03-04
 ---
 
 # Google Cloud 開發訓練營

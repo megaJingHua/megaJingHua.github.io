@@ -1,6 +1,8 @@
 ---
 title: React native 懸浮視窗
 tags: [React Native]
+layout: single
+date: 2020-03-04
 
 ---
 

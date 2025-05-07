@@ -1,6 +1,8 @@
 ---
 title: 使用 Sequelize 建立資料庫
 tags: [後端]
+layout: single
+date: 2020-03-04
 
 ---
 

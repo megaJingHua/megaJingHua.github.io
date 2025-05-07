@@ -1,7 +1,8 @@
 ---
 title: Apache Rewrite with Htaccess
 tags: [伺服器]
-
+layout: single
+date: 2020-03-04
 ---
 
 # Apache Rewrite with Htaccess

@@ -2,6 +2,8 @@
 title: Redux & Saga
 tags: [React]
 
+layout: single
+date: 2020-03-04
 ---
 
 # Redux & Saga

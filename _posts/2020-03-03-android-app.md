@@ -1,7 +1,8 @@
 ---
 title: Android APP 打包 for Window
 tags: [React Native]
-
+layout: single
+date: 2020-03-03
 ---
 
 # Android APP 打包 for Window

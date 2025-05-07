@@ -1,6 +1,8 @@
 ---
 title: react-moment
 tags: [React]
+layout: single
+date: 2020-03-04
 
 ---
 

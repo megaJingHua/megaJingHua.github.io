@@ -2,6 +2,8 @@
 title: Hook's UseContext & UseReducer
 tags: [React]
 
+layout: single
+date: 2020-03-04
 ---
 
 # Hook's UseContext & UseReducer

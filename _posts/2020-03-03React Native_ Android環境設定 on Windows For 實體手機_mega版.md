@@ -2,6 +2,8 @@
 title: 'React Native: Android環境設定 on Windows For 實體手機_mega版'
 tags: [React Native]
 
+layout: single
+date: 2020-03-03
 ---
 
 # React Native: Android環境設定 on Windows For 實體手機_mega版
