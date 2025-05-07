@@ -1,0 +1,6 @@
+{
+  "name": "jekyll-site",
+  "scripts": {
+    "dev": "docker run --rm -v C:/Users/User/Desktop/blog:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve --watch --drafts"
+  }
+}
