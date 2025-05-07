@@ -3,10 +3,10 @@ title: Android APP 打包 for Window
 tags: [React Native]
 layout: single
 date: 2020-03-03
+toc: true
+toc_sticky: true
 ---
 
-# Android APP 打包 for Window
-###### tags: `React Native`
 ## Step1.使用Keytool產生一把Key
 
 進入資料夾 cd C:\Program Files\Java\jre1.8.0_191\bin

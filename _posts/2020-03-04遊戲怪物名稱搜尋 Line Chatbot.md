@@ -3,11 +3,11 @@ title: 遊戲怪物名稱搜尋 Line Chatbot
 tags: [Line Chatbot]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 
 ---
 
-# 遊戲怪物名稱搜尋 Line Chatbot 
-###### tags: `Line Chatbot`
 ## 1.建立 怪物 Google 表單(作為資料庫)
     檔案>發佈到網路，選擇.CSV路徑即可使用
 ![](https://i.imgur.com/CbvAozM.png)

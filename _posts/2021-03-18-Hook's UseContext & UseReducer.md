@@ -4,10 +4,10 @@ tags: [React]
 
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 ---
 
-# Hook's UseContext & UseReducer
-###### tags: `React`
 
 ### 實作範例
 [CH4-Hooks useContext-Number+-](https://codesandbox.io/s/ch4-hooks-number--pbio5)

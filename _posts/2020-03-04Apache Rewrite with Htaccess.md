@@ -3,10 +3,10 @@ title: Apache Rewrite with Htaccess
 tags: [伺服器]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 ---
 
-# Apache Rewrite with Htaccess
-###### tags: `伺服器`
 啟用Rewrite需設定Apache，當讀取改寫過的.htaccess時須重啟Apache，因此...(略)直接使用線上測試.htaccess即可。
 - [Htaccess Tester](https://htaccess.madewithlove.be/)
 

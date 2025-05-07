@@ -3,11 +3,11 @@ title: "\U0001F4CD流程圖（ Flow Chart ）"
 tags: [流程圖]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 
 ---
 
-# 📍流程圖（ Flow Chart ）
-###### tags: `流程圖`
 將瑣碎且複雜的資料整理、歸納，讓其他人對你的程式內容一目了然。
 不同人對不同圖像也會有不一樣的差異，為了減少此問題，我們必需要統一流程圖的圖像。
 

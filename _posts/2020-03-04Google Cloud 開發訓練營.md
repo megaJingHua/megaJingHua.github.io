@@ -3,10 +3,10 @@ title: Google Cloud 開發訓練營
 tags: [Google Cloud]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 ---
 
-# Google Cloud 開發訓練營
-###### tags: `Google Cloud`
 
 ### [GDG Taichung](https://www.facebook.com/GDG.Taichung/)
 ( Google Developers group ) Facebook 社群。

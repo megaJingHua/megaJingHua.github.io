@@ -3,11 +3,11 @@ title: React native 懸浮視窗
 tags: [React Native]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 
 ---
 
-# React native 懸浮視窗
-###### tags: `React Native`
 [Android Floating Widget Tutorial – Display Widget Over Apps](https://www.simplifiedcoding.net/android-floating-widget-tutorial/)
 
 [Creating floating chat head like Messenger in Android!](https://thunderwiring.wordpress.com/2018/04/01/creating-floating-chat-head-like-messenger-in-android/)

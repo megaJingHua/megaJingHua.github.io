@@ -4,10 +4,10 @@ tags: [React]
 
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 ---
 
-# Redux & Saga
-###### tags: `React`
 
 ### 文件
 - [redux 官方](https://chentsulin.github.io/redux/docs/basics/index.html)

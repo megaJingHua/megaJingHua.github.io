@@ -3,11 +3,11 @@ title: 使用 Sequelize 建立資料庫
 tags: [後端]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 
 ---
 
-# 使用 Sequelize 建立資料庫
-###### tags: `後端`
 ## 建立 ER Model
 ER Model (Entity–relationship model)是設計資料庫的重要方法，簡單來說可使用 ER Model 設計資料的骨架。
 

@@ -4,10 +4,10 @@ tags: [React Native]
 
 layout: single
 date: 2020-03-03
+toc: true
+toc_sticky: true
 ---
 
-# React Native: Android環境設定 on Windows For 實體手機_mega版
-###### tags: `React Native`
 ##### RN遊戲引擎
 https://www.npmjs.com/package/react-native-game-engine
 ## Step1.安裝

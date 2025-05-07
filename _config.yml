@@ -24,3 +24,14 @@ author:
     - label: "Email"
       icon: "fas fa-envelope"
       url: "h12732u@gmail.com"
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true

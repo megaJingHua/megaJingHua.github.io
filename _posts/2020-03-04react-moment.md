@@ -3,11 +3,11 @@ title: react-moment
 tags: [React]
 layout: single
 date: 2020-03-04
+toc: true
+toc_sticky: true
 
 ---
 
-# react-moment
-###### tags: `React`
 
 ## Installing
 ``` 
