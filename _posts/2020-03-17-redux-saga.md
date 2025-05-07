@@ -1,7 +1,8 @@
 ---
 title: Redux & Saga
 tags: [React]
-
+date: 2020-03-17
+categories: [Git, Workflow]
 ---
 
 # Redux & Saga

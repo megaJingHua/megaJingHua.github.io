@@ -1,7 +1,8 @@
 ---
 title: 相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出
 tags: [Javascript]
-
+date: 2020-03-04
+categories: [Git, Workflow]
 ---
 
 # 相機調用、讀取input檔案、轉為base64、渲染相片、壓縮圖片、FormData送出
